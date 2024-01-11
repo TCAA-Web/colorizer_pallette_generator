@@ -1,3 +1,5 @@
+@use "../../styles/colors.scss" as *;
+
 .card {
   width: 100%;
   height: 20vh;
@@ -7,7 +9,45 @@
   color: white;
 }
 
+.clipboardText {
+  transition: opacity 0.2s ease;
+  background-color: $color-bg;
+  border: solid 1px white;
+  border-radius: 8px;
+  color: white;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  padding: 4px;
+  cursor: none;
+  pointer-events: none;
+}
+
 .cardWrapper {
   display: grid;
   grid-template-rows: 4fr 1fr;
+  position: relative;
+
+  div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    p {
+      transition: color, 0.3s ease;
+      cursor: pointer;
+      height: fit-content;
+    }
+    p:hover {
+      color: rgb(150, 150, 150);
+    }
+    img {
+      cursor: pointer;
+      justify-self: end;
+      width: 24px;
+      height: 24px;
+      transition: filter, 0.3s ease;
+    }
+    img:hover {
+      filter: brightness(0.5);
+    }
+  }
 }
