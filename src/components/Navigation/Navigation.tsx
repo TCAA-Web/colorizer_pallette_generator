@@ -12,24 +12,29 @@ export const Navigation = () => {
     { href: "/pallettes", title: "My Pallettes" },
   ];
   return (
-    <nav className={style.navbar}>
-      <ColoredText
-        type="h2"
-        content={"Colorizer Pallette Generator"}
-        gradient={createGradient(hexArray[0], hexArray[2])}
-      />
+    <nav
+      className={style.navbar}
+      style={{ background: createGradient(hexArray[0], hexArray[2]) }}
+    >
+      <div>
+        <ColoredText
+          type="h2"
+          content={"Colorizer Pallette Generator"}
+          gradient={createGradient(hexArray[0], hexArray[2])}
+        />
 
-      <ul>
-        {links?.map((link) => (
-          <li>
-            <ColoredNavLink
-              path={link.href}
-              title={link.title}
-              gradient={createGradient(hexArray[0], hexArray[2])}
-            />
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {links?.map((link) => (
+            <li>
+              <ColoredNavLink
+                path={link.href}
+                title={link.title}
+                gradient={createGradient(hexArray[0], hexArray[2])}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
