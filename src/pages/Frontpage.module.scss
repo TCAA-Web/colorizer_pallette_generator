@@ -1,0 +1,10 @@
+.buttonContainer {
+  width: 25%;
+  display: grid;
+  margin: auto;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+}

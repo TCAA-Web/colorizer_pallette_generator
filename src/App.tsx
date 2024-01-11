@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
-import { GeneratePalletePage } from "./pages/GeneratePalletePage";
+import { Frontpage } from "./pages/Frontpage";
 import { ColorContextProvider } from "./context/ColorContext";
-import { MyPallettesPages } from "./pages/MyPallettesPage";
+import { Userpage } from "./pages/Userpage";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainLayout />}>
-              <Route index element={<GeneratePalletePage />} />
-              <Route path="pallettes" element={<MyPallettesPages />} />
+              <Route index element={<Frontpage />} />
+              <Route path="pallettes" element={<Userpage />} />
             </Route>
           </Routes>
         </BrowserRouter>
