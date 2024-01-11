@@ -5,7 +5,8 @@ import { ColorContext } from "../context/ColorContext";
 import { createGradient } from "../helpers/createGradient";
 import { ColoredText } from "../components/ColoredText/ColoredText";
 import { savePalette } from "../helpers/savePalette";
-export const GeneratePalletePage = () => {
+import style from "./Frontpage.module.scss";
+export const Frontpage = () => {
   const { getNewColors, hexArray } = useContext(ColorContext);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export const GeneratePalletePage = () => {
           style={{ fontSize: "5rem", marginBottom: "5vh" }}
         />
         <ColorCardGrid hexColors={hexArray} />
-        <div>
+        <div className={style.buttonContainer}>
           <Button
             gradient={createGradient(hexArray[0], hexArray[2])}
             title={"Generate"}

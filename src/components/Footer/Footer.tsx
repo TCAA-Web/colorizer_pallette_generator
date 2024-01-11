@@ -3,8 +3,8 @@ export const Footer = () => {
   return (
     <footer className={style.footer}>
       <div>
-        <p>Colorizer Tool - Made by KasperFryd</p>
-        <p>Made possible by colormind.io pallette API</p>
+        <p>Colorizer Palette Generator - Made by Kasper Fryd</p>
+        <p>Made possible by colormind.io palette API</p>
       </div>
     </footer>
   );

@@ -1,6 +1,6 @@
 .cardGrid {
   display: grid;
-  width: 80%;
+  width: fit-content;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 8px;
