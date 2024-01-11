@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+  display: grid;
+  height: 6vh;
+  border-bottom: solid 2px white;
+  align-content: center;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 10vh;
+  h2 {
+    justify-self: start;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: end;
+
+    li {
+      padding: 8px;
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: white;
+      }
+    }
+  }
+}

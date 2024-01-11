@@ -1,0 +1,13 @@
+.card {
+  width: 100%;
+  height: 20vh;
+}
+
+.cardTitle {
+  color: white;
+}
+
+.cardWrapper {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+}

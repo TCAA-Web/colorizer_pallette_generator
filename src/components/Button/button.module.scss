@@ -1,0 +1,32 @@
+@use "../../styles/colors.scss" as *;
+
+.buttonPrimary {
+  padding: 20px 60px;
+  border: none;
+  outline: none;
+  position: relative;
+  //border-radius: 8px;
+  cursor: pointer;
+  span {
+    position: relative;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+  }
+}
+
+.buttonPrimary::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background-color: $color-bg;
+  // border-radius: 8px;
+}
+
+.buttonPrimary:hover span {
+  color: rgb(150, 150, 150);
+  transition: all, 0.2s ease;
+}
