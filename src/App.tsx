@@ -3,7 +3,7 @@ import { MainLayout } from "./layout/MainLayout";
 import { GeneratePalletePage } from "./pages/GeneratePalletePage";
 import { ColorContextProvider } from "./context/ColorContext";
 import { MyPallettesPages } from "./pages/MyPallettesPage";
-
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>

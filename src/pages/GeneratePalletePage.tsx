@@ -4,7 +4,7 @@ import { ColorCardGrid } from "../components/ColorCardGrid/ColorCardGrid";
 import { ColorContext } from "../context/ColorContext";
 import { createGradient } from "../helpers/createGradient";
 import { ColoredText } from "../components/ColoredText/ColoredText";
-
+import { savePalette } from "../helpers/savePalette";
 export const GeneratePalletePage = () => {
   const { getNewColors, hexArray } = useContext(ColorContext);
 
@@ -27,6 +27,11 @@ export const GeneratePalletePage = () => {
             gradient={createGradient(hexArray[0], hexArray[2])}
             title={"Generate"}
             clickHandler={getNewColors}
+          />
+          <Button
+            gradient={createGradient(hexArray[0], hexArray[2])}
+            title={"Save this one"}
+            clickHandler={() => savePalette(hexArray)}
           />
         </div>
       </section>
