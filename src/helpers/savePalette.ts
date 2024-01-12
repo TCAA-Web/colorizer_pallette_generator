@@ -1,31 +1,5 @@
-import { toast } from "react-toastify";
+import { createToast } from "./createToast";
 import { equalsCheck } from "./equalsCheck";
-
-// Toast styling
-const toastStyle = {
-  backgroundColor: "#1e1e1e",
-  border: "solid 1px white",
-};
-
-// Create toast from react-toastify
-const createToast = (message: string, type: "success" | "warning") => {
-  if (type === "success")
-    return toast.success(message, {
-      style: { ...toastStyle },
-      position: "bottom-right",
-      autoClose: 3000,
-      hideProgressBar: true,
-      theme: "dark",
-    });
-  if (type === "warning")
-    return toast.warning(message, {
-      style: { ...toastStyle },
-      position: "bottom-right",
-      autoClose: 3000,
-      hideProgressBar: true,
-      theme: "dark",
-    });
-};
 
 // Function to save a user palette to localStorage
 export const savePalette = (hexArray: Array<string>) => {

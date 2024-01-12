@@ -4,6 +4,9 @@ import { Button } from "../../components/Button/Button";
 import style from "./UserPage.module.scss";
 import { ColorContext } from "../../context/ColorContext";
 import { createGradient } from "../../helpers/createGradient";
+import { createToast } from "../../helpers/createToast";
+import { ColoredText } from "../../components/ColoredText/ColoredText";
+
 export const UserPage = () => {
   const { setActiveHex, activeHex, hexArray } = useContext(ColorContext);
   const [userPalettes, setUserPalettes] = useState<Array<Array<string>> | null>(
@@ -17,22 +20,24 @@ export const UserPage = () => {
       ).reverse();
       setUserPalettes(reversedArray);
     }
-    // Get items from localstorage
   }, []);
-
-  console.log(userPalettes);
 
   const handleSetActive = (palette: string[]) => {
     setActiveHex(palette);
+    createToast("Palette set as active color scheme", "success");
   };
 
-  const handleDelete = () => {
-    console.log("DELETE");
+  const handleDelete = (index: number) => {
+    let clone = userPalettes?.map((palette) => palette);
+    clone?.splice(index, 1);
+    setUserPalettes(clone!);
+    localStorage.setItem("userPalette", JSON.stringify(clone));
+    createToast("Palette deleted", "success");
   };
 
   return (
     <section>
-      {userPalettes?.map((palette) => {
+      {userPalettes?.map((palette: string[], index: number) => {
         return (
           <div className={style.paletteGrid}>
             <ColorCardGrid hexColors={palette} />
@@ -53,12 +58,23 @@ export const UserPage = () => {
                     ? createGradient(hexArray[0], hexArray[2])
                     : createGradient(activeHex[0], activeHex[2])
                 }
-                clickHandler={handleDelete}
+                clickHandler={() => handleDelete(index)}
               />
             </div>
           </div>
         );
       })}
+      {!userPalettes && (
+        <ColoredText
+          type="h3"
+          content="No palettes saved"
+          gradient={
+            !activeHex
+              ? createGradient(hexArray[0], hexArray[2])
+              : createGradient(activeHex[0], activeHex[2])
+          }
+        />
+      )}
     </section>
   );
 };
