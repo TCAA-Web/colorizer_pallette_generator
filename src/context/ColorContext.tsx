@@ -5,11 +5,11 @@ import {
 } from "../interfaces/colorArrayInterface";
 import { rgbToHex } from "../helpers/rgbToHex";
 
-type ColorContextType = string;
+type ColorContextType = string[] | null;
 
 interface ColorInterface {
-  activeHex: string;
-  setActiveHex: (theme: ColorContextType) => void;
+  activeHex: string[] | null;
+  setActiveHex: (theme: ColorContextType | null) => void;
   getNewColors: () => void;
   colorArray: colorArrayInterface;
   setColorArray: (color: colorArrayInterface) => void;
@@ -18,7 +18,7 @@ interface ColorInterface {
 }
 
 const defaultValues = {
-  activeHex: "",
+  activeHex: [""],
   setActiveHex: () => {},
   getNewColors: () => {},
   colorArray: { result: [] },
@@ -34,7 +34,7 @@ export const ColorContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [activeHex, setActiveHex] = useState<ColorContextType>("");
+  const [activeHex, setActiveHex] = useState<ColorContextType | null>(null);
   const [hexArray, setHexArray] = useState<Array<string>>([""]);
   const [colorArray, setColorArray] = useState<colorArrayInterface>({
     result: [],
