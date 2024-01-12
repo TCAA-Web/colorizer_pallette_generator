@@ -8,10 +8,11 @@ import { savePalette } from "../../helpers/savePalette";
 import style from "./Frontpage.module.scss";
 
 export const FrontPage = () => {
-  const { getNewColors, hexArray } = useContext(ColorContext);
+  const { getNewColors, hexArray, setActiveHex } = useContext(ColorContext);
 
   useEffect(() => {
     getNewColors();
+    setActiveHex(null);
   }, []);
 
   return (
