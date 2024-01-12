@@ -7,7 +7,6 @@ interface ButtonInterface {
 }
 
 export const Button = ({ clickHandler, gradient, title }: ButtonInterface) => {
-  console.log("gradient", gradient);
   return (
     <button
       className={style.buttonPrimary}

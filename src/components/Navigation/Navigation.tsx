@@ -32,8 +32,8 @@ export const Navigation = () => {
         />
 
         <ul>
-          {links?.map((link) => (
-            <li>
+          {links?.map((link, i) => (
+            <li key={i}>
               <ColoredNavLink
                 path={link.href}
                 title={link.title}

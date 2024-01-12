@@ -7,8 +7,8 @@ interface ColorCardGridInterface {
 export const ColorCardGrid = ({ hexColors }: ColorCardGridInterface) => {
   return (
     <div className={style.cardGrid}>
-      {hexColors.map((color: string) => (
-        <ColorCard hexValue={color} />
+      {hexColors.map((color: string, i) => (
+        <ColorCard key={i} hexValue={color} />
       ))}
     </div>
   );
