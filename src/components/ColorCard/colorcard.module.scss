@@ -1,9 +1,11 @@
 @use "../../globals.scss" as *;
 
 .card {
-  width: 12vw;
-  height: 12vw;
-  max-width: 360px;
+  height: 13vw;
+  width: 13vw;
+  //max-width: 14vw;
+  // max-height: 14vw;
+  //max-width: 360px;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -25,6 +27,7 @@
   padding: 8px;
   cursor: none;
   pointer-events: none;
+  z-index: 2;
 }
 
 .cardWrapper {
@@ -36,7 +39,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
-    width: 13vw;
+    //width: 13vw;
     p {
       transition: color, 0.3s ease;
       cursor: pointer;
@@ -55,5 +58,11 @@
     img:hover {
       filter: brightness(0.5);
     }
+  }
+}
+@media screen and (max-width: 650px) {
+  .card {
+    width: 34vw;
+    height: 34vw;
   }
 }

@@ -10,7 +10,7 @@ export const savePalette = (hexArray: Array<string>) => {
   } else {
     let userArr = JSON.parse(localStorage.getItem("userPalette")!);
     if (equalsCheck(userArr[userArr.length - 1], hexArray)) {
-      createToast("Palette is allready saved", "warning");
+      createToast("Palette is already saved", "warning");
     } else {
       userArr.push(hexArray);
       localStorage.setItem("userPalette", JSON.stringify(userArr));

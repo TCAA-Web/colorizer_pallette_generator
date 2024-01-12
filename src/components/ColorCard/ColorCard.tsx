@@ -22,7 +22,7 @@ export const ColorCard = ({ hexValue }: ColorCardInterface) => {
   return (
     <div className={style.cardWrapper}>
       <div style={{ backgroundColor: hexValue }} className={style.card}></div>
-      <div>
+      <div className={style.innerWrapper}>
         <p onClick={clickHandler} className={style.cardTitle}>
           {hexValue}
         </p>

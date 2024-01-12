@@ -4,4 +4,38 @@
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 8px;
+  padding-bottom: 10%;
+  border-bottom: solid 1px white;
+  margin-bottom: 5vh;
+}
+
+.cardGridMobile {
+  width: 90%;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 4px;
+  border-bottom: solid 1px white;
+  position: relative;
+  div {
+    grid-template-rows: 1fr;
+    div {
+      width: 15vw;
+      height: 15vw;
+      img {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 860px) {
+}
+
+@media screen and (max-width: 650px) {
+  .cardGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }

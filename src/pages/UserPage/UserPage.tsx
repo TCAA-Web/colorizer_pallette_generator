@@ -35,29 +35,27 @@ export const UserPage = () => {
     createToast("Palette deleted", "success");
   };
 
+  const gradient = () => {
+    return !activeHex
+      ? createGradient(hexArray[0], hexArray[2])
+      : createGradient(activeHex[0], activeHex[2]);
+  };
+
   return (
     <section>
       {userPalettes?.map((palette: string[], index: number) => {
         return (
-          <div className={style.paletteGrid}>
+          <div key={index} className={style.paletteGrid}>
             <ColorCardGrid hexColors={palette} />
             <div className={style.innerGrid}>
               <Button
                 title={"Set active"}
-                gradient={
-                  !activeHex
-                    ? createGradient(hexArray[0], hexArray[2])
-                    : createGradient(activeHex[0], activeHex[2])
-                }
+                gradient={gradient()}
                 clickHandler={() => handleSetActive(palette)}
               />
               <Button
                 title={"Delete"}
-                gradient={
-                  !activeHex
-                    ? createGradient(hexArray[0], hexArray[2])
-                    : createGradient(activeHex[0], activeHex[2])
-                }
+                gradient={gradient()}
                 clickHandler={() => handleDelete(index)}
               />
             </div>
@@ -68,11 +66,7 @@ export const UserPage = () => {
         <ColoredText
           type="h3"
           content="No palettes saved"
-          gradient={
-            !activeHex
-              ? createGradient(hexArray[0], hexArray[2])
-              : createGradient(activeHex[0], activeHex[2])
-          }
+          gradient={gradient()}
         />
       )}
     </section>
