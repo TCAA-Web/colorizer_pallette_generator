@@ -1,17 +1,19 @@
-@use "../../styles/colors.scss" as *;
+@use "../../globals.scss" as *;
 
 .buttonPrimary {
-  max-width: 200px;
-  padding: 20px 20px;
+  width: 100%;
+  max-width: 180px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   position: relative;
-  //border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
+  margin: auto;
   span {
     position: relative;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: white;
   }
 }
@@ -24,7 +26,7 @@
   bottom: 2px;
   left: 2px;
   background-color: $color-bg;
-  // border-radius: 8px;
+  border-radius: 4px;
 }
 
 .buttonPrimary:hover span {

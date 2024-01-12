@@ -1,0 +1,14 @@
+.paletteGrid {
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+  .innerGrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+  }
+}

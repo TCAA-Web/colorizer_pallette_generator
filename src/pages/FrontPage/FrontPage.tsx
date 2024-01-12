@@ -1,12 +1,13 @@
 import { useContext, useEffect } from "react";
-import { Button } from "../components/Button/Button";
-import { ColorCardGrid } from "../components/ColorCardGrid/ColorCardGrid";
-import { ColorContext } from "../context/ColorContext";
-import { createGradient } from "../helpers/createGradient";
-import { ColoredText } from "../components/ColoredText/ColoredText";
-import { savePalette } from "../helpers/savePalette";
+import { Button } from "../../components/Button/Button";
+import { ColorCardGrid } from "../../components/ColorCardGrid/ColorCardGrid";
+import { ColorContext } from "../../context/ColorContext";
+import { createGradient } from "../../helpers/createGradient";
+import { ColoredText } from "../../components/ColoredText/ColoredText";
+import { savePalette } from "../../helpers/savePalette";
 import style from "./Frontpage.module.scss";
-export const Frontpage = () => {
+
+export const FrontPage = () => {
   const { getNewColors, hexArray } = useContext(ColorContext);
 
   useEffect(() => {
@@ -22,7 +23,9 @@ export const Frontpage = () => {
           content={"Your new colors"}
           style={{ fontSize: "5rem", marginBottom: "5vh" }}
         />
-        <ColorCardGrid hexColors={hexArray} />
+        <div className={style.cardGridWrapper}>
+          <ColorCardGrid hexColors={hexArray} />
+        </div>
         <div className={style.buttonContainer}>
           <Button
             gradient={createGradient(hexArray[0], hexArray[2])}
