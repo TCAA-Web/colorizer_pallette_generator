@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route index element={<FrontPage />} />
-              <Route path="pallettes" element={<UserPage />} />
+              <Route path="palettes" element={<UserPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

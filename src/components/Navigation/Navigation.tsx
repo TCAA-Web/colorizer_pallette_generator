@@ -8,27 +8,27 @@ import { ColoredNavLink } from "../ColoredNavlink/ColoredNavlink";
 export const Navigation = () => {
   const { hexArray, activeHex } = useContext(ColorContext);
   const links = [
-    { href: "/", title: "Random Pallette" },
-    { href: "/pallettes", title: "My Pallettes" },
+    { href: "/", title: "Random Palette" },
+    { href: "/palettes", title: "My Palettes" },
   ];
+
+  const gradient = () => {
+    return !activeHex
+      ? createGradient(hexArray[0], hexArray[2])
+      : createGradient(activeHex[0], activeHex[2]);
+  };
   return (
     <nav
       className={style.navbar}
       style={{
-        background: !activeHex
-          ? createGradient(hexArray[0], hexArray[2])
-          : createGradient(activeHex[0], activeHex[2]),
+        background: gradient(),
       }}
     >
       <div>
         <ColoredText
           type="h2"
-          content={"Colorizer Pallette Generator"}
-          gradient={
-            !activeHex
-              ? createGradient(hexArray[0], hexArray[2])
-              : createGradient(activeHex[0], activeHex[2])
-          }
+          content={"Colorizer Palette Generator"}
+          gradient={gradient()}
         />
 
         <ul>
@@ -37,11 +37,7 @@ export const Navigation = () => {
               <ColoredNavLink
                 path={link.href}
                 title={link.title}
-                gradient={
-                  !activeHex
-                    ? createGradient(hexArray[0], hexArray[2])
-                    : createGradient(activeHex[0], activeHex[2])
-                }
+                gradient={gradient()}
               />
             </li>
           ))}

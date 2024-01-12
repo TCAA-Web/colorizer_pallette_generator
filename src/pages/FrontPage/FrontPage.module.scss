@@ -1,3 +1,9 @@
+.frontPageWrapper {
+  h2 {
+    font-size: 5vw;
+  }
+}
+
 .buttonContainer {
   width: 25%;
   display: grid;
@@ -7,9 +13,43 @@
   align-items: center;
   justify-content: center;
   margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .cardGridWrapper {
   width: 70%;
   margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .buttonContainer {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .buttonContainer {
+    margin-top: 10%;
+    width: 50%;
+    margin-bottom: 10%;
+  }
+  .frontPageWrapper {
+    h2 {
+      font-size: 6vw;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .buttonContainer {
+    width: 90%;
+  }
+  .cardGridWrapper {
+    width: 75%;
+  }
+  .frontPageWrapper {
+    h2 {
+      font-size: 10vw;
+    }
+  }
 }

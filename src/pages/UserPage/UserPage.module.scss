@@ -12,3 +12,15 @@
     gap: 8px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 860px) {
+}
+
+@media screen and (max-width: 650px) {
+  .paletteGrid {
+    grid-template-columns: 1fr;
+  }
+}

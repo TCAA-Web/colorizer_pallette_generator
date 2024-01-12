@@ -17,12 +17,12 @@ export const FrontPage = () => {
 
   return (
     <>
-      <section>
+      <section className={style.frontPageWrapper}>
         <ColoredText
           type="h2"
           gradient={createGradient(hexArray[0], hexArray[2])}
           content={"Your new colors"}
-          style={{ fontSize: "5rem", marginBottom: "5vh" }}
+          style={{ marginBottom: "5vh" }}
         />
         <div className={style.cardGridWrapper}>
           <ColorCardGrid hexColors={hexArray} />
