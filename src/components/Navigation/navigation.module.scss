@@ -1,4 +1,4 @@
-@use "../../styles/colors.scss" as *;
+@use "../../globals.scss" as *;
 
 .navbar {
   width: 100%;
@@ -11,7 +11,7 @@
   div {
     display: grid;
     align-content: center;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     background-color: $color-darker;
     height: 100%;
     width: 100%;
