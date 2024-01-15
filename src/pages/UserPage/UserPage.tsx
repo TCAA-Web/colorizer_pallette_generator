@@ -46,7 +46,10 @@ export const UserPage = () => {
       {userPalettes?.map((palette: string[], index: number) => {
         return (
           <div key={index} className={style.paletteGrid}>
-            <ColorCardGrid hexColors={palette} />
+            <ColorCardGrid
+              styles={style.userPageContainer}
+              hexColors={palette}
+            />
             <div className={style.innerGrid}>
               <Button
                 title={"Set active"}

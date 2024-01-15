@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 5vh;
+  gap: 8px;
   .innerGrid {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -20,7 +21,55 @@
 }
 
 @media screen and (max-width: 650px) {
+  .userPageContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: none;
+    div {
+      width: 50px;
+      height: 50px;
+      font-size: 0.6rem;
+      display: grid;
+      grid-template-rows: 3fr 1fr;
+    }
+  }
   .paletteGrid {
     grid-template-columns: 1fr;
+
+    div {
+      div {
+        div {
+          p {
+            text-align: center;
+          }
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+    .innerGrid {
+      border-top: solid 2px white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      position: relative;
+
+      button {
+        width: 80px;
+        font-size: 0.8rem;
+        // width: fit-content;
+        padding: 4px;
+        position: absolute;
+      }
+
+      button:nth-child(even) {
+        top: -15px;
+        left: 25%;
+      }
+      button:nth-child(odd) {
+        top: -15px;
+        left: 55%;
+      }
+    }
   }
 }
