@@ -53,5 +53,13 @@
 @media screen and (max-width: 650px) {
   .navbar {
     height: 10vh;
+    div {
+      ul {
+        justify-self: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+    }
   }
 }
